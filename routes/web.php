@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::get('/hello', [HelloController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/products/{id}', [ProductController::class, 'show']);
+
+Route::get('/requests/create', [RequestController::class, 'create']);
+
+Route::post('/requests/confirm', [RequestController::class, 'confirm'])->name('requests.confirm');

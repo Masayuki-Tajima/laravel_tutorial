@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\CookieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,11 @@ Route::get('/requests/create', [RequestController::class, 'create']);
 Route::post('/requests/confirm', [RequestController::class, 'confirm'])->name('requests.confirm');
 
 Route::get('/responses', [ResponseController::class, 'index']);
+
+Route::get('/cookies', [CookieController::class, 'index']);
+
+Route::get('/cookies/create', [CookieController::class, 'create'])->name('cookies.create');
+
+Route::post('/cookies/store', [CookieController::class, 'store'])->name('cookies.store');
+
+Route::delete('/cookies/destroy', [CookieController::class, 'destroy'])->name('cookies.destroy');
